@@ -1,9 +1,7 @@
-﻿
-using Microsoft.Extensions.AI;
+﻿using Microsoft.Extensions.AI;
 using Microsoft.Extensions.Configuration;
 using OpenAI;
 using System.ClientModel;
-using System.Text.Json.Serialization;
 
 // get credentials from user secrets
 IConfigurationRoot config = new ConfigurationBuilder().AddUserSecrets<Program>().Build();
@@ -22,14 +20,14 @@ var client = new OpenAIClient(credintial, options).GetChatClient("openai/gpt-4.1
 
 // Send propmt to chat model and get response
 
-//string prompt = "What is AI ? explain max 20 word";
+string prompt = "What is AI ? explain max 20 word";
 
-//Console.WriteLine($"user >> {prompt}");
+Console.WriteLine($"user >> {prompt}");
 
-//ChatResponse response = await client.GetResponseAsync(prompt);
+ChatResponse response = await client.GetResponseAsync(prompt);
 
-//Console.WriteLine($"assistant >> {response}");
-//Console.WriteLine($"Token use: in={response.Usage?.InputTokenCount}, out={response.Usage?.OutputTokenCount}");
+Console.WriteLine($"assistant >> {response}");
+Console.WriteLine($"Token use: in={response.Usage?.InputTokenCount}, out={response.Usage?.OutputTokenCount}");
 
 #endregion
 
