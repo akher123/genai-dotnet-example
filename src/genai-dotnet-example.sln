@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextCompletion", "TextCompl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunctionCall", "FunctionCall\FunctionCall.csproj", "{6B82A57F-BB82-40FA-97D4-FA6F17E5B78C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "vectors", "vectors", "{FAC1F5CD-20EC-41DD-A4D4-1802737E57FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Embeddings", "Embeddings\Embeddings.csproj", "{C6D66604-31EC-4D03-9461-5A0BFAE9BCCB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +27,10 @@ Global
 		{6B82A57F-BB82-40FA-97D4-FA6F17E5B78C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B82A57F-BB82-40FA-97D4-FA6F17E5B78C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B82A57F-BB82-40FA-97D4-FA6F17E5B78C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6D66604-31EC-4D03-9461-5A0BFAE9BCCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6D66604-31EC-4D03-9461-5A0BFAE9BCCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6D66604-31EC-4D03-9461-5A0BFAE9BCCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6D66604-31EC-4D03-9461-5A0BFAE9BCCB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,6 +38,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{0CF6353D-4B13-E0F1-D048-5E525ECDED32} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{6B82A57F-BB82-40FA-97D4-FA6F17E5B78C} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{C6D66604-31EC-4D03-9461-5A0BFAE9BCCB} = {FAC1F5CD-20EC-41DD-A4D4-1802737E57FD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FA3AFDD0-3518-4E05-AAE8-6D20FA455184}
