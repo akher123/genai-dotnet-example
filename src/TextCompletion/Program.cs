@@ -34,14 +34,38 @@ var client = new OpenAIClient(credintial, options).GetChatClient("openai/gpt-4.1
 
 #region Streaming Completion
 
-string prompt = "What is AI ? explain max 20 word";
+//string prompt = "What is AI ? explain max 20 word";
 
-Console.WriteLine($"user >> {prompt}");
+//Console.WriteLine($"user >> {prompt}");
 
-var responseStream = client.GetStreamingResponseAsync(prompt);
-await foreach (var response in responseStream)
-{
-    Console.Write(response.Text);
-}
+//var responseStream = client.GetStreamingResponseAsync(prompt);
+//await foreach (var response in responseStream)
+//{
+//    Console.Write(response.Text);
+//}
+
+#endregion
+
+
+#region Classification
+
+var classificationPrompt = """
+    Please classify the following sentences into categories: 
+    - 'complaint' 
+    - 'suggestion' 
+    - 'praise' 
+    - 'other'.
+
+    1) "I love the new layout!"
+    2) "You should add a night mode."
+    3) "When I try to log in, it keeps failing."
+    4) "This app is decent."
+    """;
+
+Console.WriteLine($"user >> {classificationPrompt}");
+
+ChatResponse classificationResponse = await client.GetResponseAsync(classificationPrompt);
+
+Console.WriteLine($"assistant >> {classificationResponse}");
 
 #endregion
