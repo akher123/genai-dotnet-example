@@ -21,13 +21,27 @@ var client = new OpenAIClient(credintial, options).GetChatClient("openai/gpt-4.1
 
 // Send propmt to chat model and get response
 
+//string prompt = "What is AI ? explain max 20 word";
+
+//Console.WriteLine($"user >> {prompt}");
+
+//ChatResponse response = await client.GetResponseAsync(prompt);
+
+//Console.WriteLine($"assistant >> {response}");
+//Console.WriteLine($"Token use: in={response.Usage?.InputTokenCount}, out={response.Usage?.OutputTokenCount}");
+
+#endregion
+
+#region Streaming Completion
+
 string prompt = "What is AI ? explain max 20 word";
 
 Console.WriteLine($"user >> {prompt}");
 
-ChatResponse response = await client.GetResponseAsync(prompt);
-
-Console.WriteLine($"assistant >> {response}");
-Console.WriteLine($"Token use: in={response.Usage?.InputTokenCount}, out={response.Usage?.OutputTokenCount}");
+var responseStream = client.GetStreamingResponseAsync(prompt);
+await foreach (var response in responseStream)
+{
+    Console.Write(response.Text);
+}
 
 #endregion
